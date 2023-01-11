@@ -1,0 +1,19 @@
+<%- include ("partials/header") -%>
+    <div class="row">
+      <div class="leftcolumn">
+        <div class="card">
+        <h2>Oil Wells in Kenya</h2>
+        <p> <%= kenyanWell %> </p>
+        <img src="/oilKenya.jpg" alt="Kenya Oil Basins" class="img-responsive">
+        </div>
+      </div>
+      <div class="rightcolumn">
+        <div class="card">
+        <% miningContent.forEach((miningContent, i) => { %>
+        <h1> <%= miningContent.title %> </h1>
+        <p> <%= miningContent.content.substring(0, 100) + " ..." %> <a href="/oilposts/<%= miningContent._id %>">...read more</a></p>
+        <%  }); %>
+      </div>
+      </div>
+    </div>
+  <%- include("partials/footer") -%>

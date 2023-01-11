@@ -1,0 +1,19 @@
+<%- include ("partials/header") -%>
+      <div class="row">
+        <div class="leftcolumn">
+          <div class="card">
+            <h2>Trade In Kenya</h2>
+            <p> <%= biashara %> </p>
+            <img src="/soko.jpg" alt="Soko" class="img-responsive">
+          </div>
+        </div>
+        <div class="rightcolumn">
+          <div class="card">
+            <% businessContent.forEach((businessContent, i) => { %>
+            <h1> <%= businessContent.title %> </h1>
+            <p> <%= businessContent.content.substring(0, 100) + " ..." %> <a href="/biasharaposts/<%= businessContent._id %>">..read more</a></p>
+            <%  }); %>
+          </div>
+        </div>
+      </div>
+  <%- include("partials/footer") -%>

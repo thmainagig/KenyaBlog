@@ -1,0 +1,21 @@
+<%- include ("partials/header") -%>
+    <div class="container">
+      <div class="row">
+        <div class="leftcolumn">
+          <div class="card">
+            <h2>People of Kenya</h2>
+            <p> <%= taaluma %> </p>
+            <img src="/kikuyu.jpg" alt="Kenyan Culture" class="img-responsive k1">
+          </div>
+        </div>
+        <div class="rightcolumn">
+          <div class="card">
+            <% cultureContent.forEach((cultureContent, i) => { %>
+            <h1> <%= cultureContent.title %> </h1>
+            <p> <%= cultureContent.content.substring(0, 100) + " ..." %> <a href="/taalumaposts/<%= cultureContent._id %>">..read more</a></p>
+            <%  }); %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <%- include("partials/footer") -%>

@@ -1,0 +1,19 @@
+<%- include ("partials/header") -%>
+      <div class="row">
+        <div class="leftcolumn">
+          <div class="card">
+            <h2>Farming in Kenya</h2>
+            <p> <%= kilimo %> </p>
+            <img src="/kilimo.jpg" alt="Kilimo" class="kilimo">
+          </div>
+        </div>
+        <div class="rightcolumn">
+          <div class="card">
+            <% farmContent.forEach((farmContent, i) => { %>
+            <h1> <%= farmContent.title %> </h1>
+            <p> <%= farmContent.content.substring(0, 100) + " ..." %> <a href="/kilimoposts/<%= farmContent._id %>">..read more</a></p>
+            <%  }); %>
+          </div>
+        </div>
+      </div>
+  <%- include("partials/footer") -%>
